@@ -1,0 +1,12 @@
+{
+  "$schema": "https://iamjason.github.io/hyrule-compendium-site/schema/hyrule.schema.json",
+  "name": "Fang and Bone",
+  "command": "fnb",
+  "tagline": "Onboards and offboards App Store Connect team members and TestFlight testers in one re-runnable command.",
+  "status": "experimental",
+  "language": "Swift",
+  "platforms": [
+    "macos"
+  ],
+  "install": "brew install jason/tap/fnb"
+}

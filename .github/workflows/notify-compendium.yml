@@ -1,0 +1,63 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# SNIPPET — copy this file into each tool repo at
+#   .github/workflows/notify-compendium.yml
+#
+# It tells the Hyrule Compendium to rebuild as soon as the tool cuts a release,
+# instead of waiting for the next daily run.
+#
+# Setup in the TOOL repo:
+#   1. Settings → Secrets and variables → Actions → New repository secret
+#   2. Name:  COMPENDIUM_DISPATCH_TOKEN
+#   3. Value: a PAT with permission to dispatch to the Compendium repo.
+#      See "PAT setup" in the Compendium README for exact scopes.
+#
+# The `if:` guard below makes this file inert inside the Compendium repo itself,
+# so it is harmless to keep here as a reference copy. Leave it in place when you
+# copy the file — it will never match in a tool repo.
+# ─────────────────────────────────────────────────────────────────────────────
+
+name: Notify Compendium
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  dispatch:
+    name: Send repository_dispatch
+    if: github.repository != 'iamjason/hyrule-compendium-site'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping the Compendium
+        env:
+          TOKEN: ${{ secrets.COMPENDIUM_DISPATCH_TOKEN }}
+          COMPENDIUM: iamjason/hyrule-compendium-site
+        run: |
+          if [ -z "$TOKEN" ]; then
+            echo "::error::COMPENDIUM_DISPATCH_TOKEN is not set in this repo's secrets."
+            exit 1
+          fi
+
+          payload=$(jq -nc \
+            --arg repo    "${{ github.repository }}" \
+            --arg tag     "${{ github.event.release.tag_name }}" \
+            --arg release "${{ github.event.release.html_url }}" \
+            '{event_type: "tool-released",
+              client_payload: {repository: $repo, tag: $tag, release_url: $release}}')
+
+          status=$(curl -sS -o /tmp/resp.txt -w '%{http_code}' \
+            -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $TOKEN" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/$COMPENDIUM/dispatches" \
+            -d "$payload")
+
+          if [ "$status" != "204" ]; then
+            echo "::error::Dispatch failed with HTTP $status"
+            cat /tmp/resp.txt
+            exit 1
+          fi
+
+          echo "Compendium notified: $COMPENDIUM (HTTP 204)"

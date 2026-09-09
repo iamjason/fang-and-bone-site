@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#160c29"/>
+      <stop offset="55%" stop-color="#2b1a4d"/>
+      <stop offset="100%" stop-color="#3c2568"/>
+    </linearGradient>
+    <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f7ecc9" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#f7ecc9" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#241640"/>
+      <stop offset="100%" stop-color="#140b24"/>
+    </linearGradient>
+    <radialGradient id="fireflyGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#caa6ff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#caa6ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="360" fill="url(#sky)"/>
+
+  <!-- stars -->
+  <g fill="#f7ecc9">
+    <circle cx="70" cy="36" r="1.6"/>
+    <circle cx="130" cy="70" r="2"/>
+    <circle cx="230" cy="30" r="1.4"/>
+    <circle cx="300" cy="60" r="1.8"/>
+    <circle cx="60" cy="120" r="1.6"/>
+    <circle cx="380" cy="34" r="1.4"/>
+    <circle cx="470" cy="24" r="1.8"/>
+    <circle cx="620" cy="30" r="1.4"/>
+    <circle cx="700" cy="50" r="1.6"/>
+    <circle cx="150" cy="150" r="1.2"/>
+    <circle cx="850" cy="34" r="1.6"/>
+    <circle cx="30" cy="200" r="1.4"/>
+  </g>
+
+  <!-- moon -->
+  <circle cx="1030" cy="86" r="120" fill="url(#moonGlow)"/>
+  <circle cx="1030" cy="86" r="48" fill="#f7ecc9"/>
+  <circle cx="1046" cy="70" r="6" fill="#e6d3a0" opacity="0.55"/>
+  <circle cx="1014" cy="98" r="9" fill="#e6d3a0" opacity="0.45"/>
+  <circle cx="1040" cy="104" r="4" fill="#e6d3a0" opacity="0.5"/>
+
+  <!-- bats -->
+  <g fill="#0f0a1c">
+    <path d="M195,72 q10,-16 22,-4 q4,-6 8,0 q12,-12 22,4 q-14,4 -30,16 q-16,-12 -22,-16 Z"/>
+    <path d="M905,140 q8,-13 18,-3 q3,-5 6,0 q10,-10 18,3 q-11,3 -24,13 q-13,-10 -18,-13 Z"/>
+  </g>
+
+  <!-- ground -->
+  <path d="M0,268 Q200,232 420,256 T860,244 T1200,262 L1200,360 L0,360 Z" fill="url(#hill)"/>
+
+  <!-- shrubs -->
+  <g fill="#1c1230">
+    <ellipse cx="120" cy="292" rx="46" ry="20"/>
+    <ellipse cx="1080" cy="300" rx="60" ry="22"/>
+    <ellipse cx="990" cy="292" rx="34" ry="16"/>
+  </g>
+
+  <!-- stall poles -->
+  <rect x="454" y="150" width="12" height="140" fill="#4a3220"/>
+  <rect x="736" y="150" width="12" height="140" fill="#4a3220"/>
+
+  <!-- canopy -->
+  <path d="M430,150 L770,150 L742,96 Q600,66 458,96 Z" fill="#5b2a5e"/>
+  <path d="M430,150 L770,150 L742,96 Q600,66 458,96 Z" fill="none" stroke="#3f1c46" stroke-width="4"/>
+  <g fill="#4a2350">
+    <circle cx="452" cy="150" r="15"/>
+    <circle cx="482" cy="150" r="15"/>
+    <circle cx="512" cy="150" r="15"/>
+    <circle cx="542" cy="150" r="15"/>
+    <circle cx="572" cy="150" r="15"/>
+    <circle cx="602" cy="150" r="15"/>
+    <circle cx="632" cy="150" r="15"/>
+    <circle cx="662" cy="150" r="15"/>
+    <circle cx="692" cy="150" r="15"/>
+    <circle cx="722" cy="150" r="15"/>
+    <circle cx="748" cy="150" r="15"/>
+  </g>
+
+  <!-- counter -->
+  <rect x="440" y="272" width="340" height="16" fill="#3a2717"/>
+  <rect x="440" y="288" width="340" height="14" fill="#2a1c10"/>
+  <rect x="448" y="230" width="304" height="42" fill="#2c1d10" opacity="0.55"/>
+
+  <!-- wares on the counter: fang, bone, horn -->
+  <path d="M486,264 q6,-26 12,0 q-6,-8 -12,0 Z" fill="#f2ecd8"/>
+  <path d="M560,266 q-10,-4 -10,-12 q0,-8 8,-8 q2,-6 8,-6 q8,0 8,8 q8,0 8,8 q0,8 -10,12 q-6,-4 -12,-2 Z" fill="#f2ecd8"/>
+  <path d="M700,268 q26,-30 46,-8 q-18,2 -28,14 q-10,4 -18,-6 Z" fill="#e7ddb8"/>
+
+  <!-- hanging sign -->
+  <line x1="560" y1="96" x2="548" y2="150" stroke="#2a1c10" stroke-width="3"/>
+  <line x1="640" y1="96" x2="652" y2="150" stroke="#2a1c10" stroke-width="3"/>
+  <rect x="470" y="150" width="260" height="66" rx="6" fill="#3a2717" stroke="#1c1108" stroke-width="4"/>
+  <text x="600" y="192" text-anchor="middle" font-family="Georgia, 'Palatino Linotype', 'Times New Roman', serif" font-size="30" fill="#f2e7c4" font-weight="bold" letter-spacing="1">Fang &amp; Bone</text>
+
+  <!-- shopkeeper silhouette -->
+  <g>
+    <path d="M310,290 Q308,206 366,192 Q424,206 422,290 Z" fill="#120a20"/>
+    <circle cx="366" cy="186" r="27" fill="#120a20"/>
+    <path d="M340,178 Q366,150 392,178 Q392,196 366,206 Q340,196 340,178 Z" fill="#120a20"/>
+    <circle cx="357" cy="184" r="4" fill="#caa6ff"/>
+    <circle cx="376" cy="184" r="4" fill="#caa6ff"/>
+  </g>
+
+  <!-- lantern on a hooked staff -->
+  <path d="M300,300 Q294,220 316,196" fill="none" stroke="#2a1c10" stroke-width="4" stroke-linecap="round"/>
+  <path d="M316,196 q14,-6 18,8" fill="none" stroke="#2a1c10" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="336" cy="214" r="20" fill="#f5c86b" opacity="0.28"/>
+  <rect x="326" y="204" width="20" height="22" rx="3" fill="#3a2717"/>
+  <circle cx="336" cy="215" r="8" fill="#f7d98a"/>
+
+  <!-- fireflies -->
+  <g>
+    <circle cx="910" cy="230" r="10" fill="url(#fireflyGlow)"/>
+    <circle cx="910" cy="230" r="2.4" fill="#f0dcff"/>
+    <circle cx="960" cy="188" r="8" fill="url(#fireflyGlow)"/>
+    <circle cx="960" cy="188" r="2" fill="#f0dcff"/>
+    <circle cx="160" cy="210" r="8" fill="url(#fireflyGlow)"/>
+    <circle cx="160" cy="210" r="2" fill="#f0dcff"/>
+    <circle cx="850" cy="270" r="7" fill="url(#fireflyGlow)"/>
+    <circle cx="850" cy="270" r="1.8" fill="#f0dcff"/>
+  </g>
+</svg>
