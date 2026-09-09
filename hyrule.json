@@ -5,6 +5,7 @@
   "tagline": "Onboards and offboards App Store Connect team members and TestFlight testers in one re-runnable command.",
   "status": "experimental",
   "language": "Swift",
+  "icon": "https://raw.githubusercontent.com/iamjason/fang-and-bone-site/main/assets/fang-and-bone-icon.png",
   "platforms": [
     "macos"
   ],
