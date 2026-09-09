@@ -178,9 +178,12 @@ Sign-in mirrors `fnb auth login`: it opens the right App Store Connect page,
 watches Downloads for the `.p8`, reads the Key ID from the filename, verifies
 the key against the live API before storing it, and shreds the download.
 
-The app is sandboxed and hardened, and every entitlement is justified in the
-project file. The app and the CLI keep **separate** keychain items; the sign-in
-sheet offers to adopt the CLI's key so you only download one.
+The app is hardened, and deliberately *not* sandboxed: the in-app updater
+replaces the app's own bundle in `/Applications` and relaunches it, which no
+container can reach. Everything else is written as if the sandbox were still on
+— security-scoped bookmarks, no path assumptions — and every entitlement is
+justified in the project file. The app and the CLI keep **separate** keychain
+items; the sign-in sheet offers to adopt the CLI's key so you only download one.
 
 ## Design notes
 
