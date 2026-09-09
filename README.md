@@ -1,6 +1,6 @@
 # fang-and-bone (`fnb`)
 
-![Fang and Bone](docs/images/banner.svg)
+<p align="center"><img src="assets/fang-and-bone-icon.png" alt="Fang & Bone: a purple monster with ivory horns, fangs, and a bone charm" width="240" height="240"></p>
 
 App Store Connect user and TestFlight maintenance from your terminal.
 
