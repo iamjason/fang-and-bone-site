@@ -212,3 +212,7 @@ every upgrade — which revokes the grant and re-prompts forever. Letting Apple'
 own stable-identity tool own the item avoids that entirely. The trade, stated
 plainly: confidentiality becomes user-level rather than per-application, since
 any process running as you can read the key by invoking `security` itself.
+
+## Usage statistics
+
+This site records anonymous usage statistics: page views, download clicks and a daily visitor count derived from a hash of your IP address and browser. No cookies, no personal data, nothing stored in your browser. The collector is [Gossip Stone](https://github.com/iamjason/gossip-stone-swift#what-is-sent).
